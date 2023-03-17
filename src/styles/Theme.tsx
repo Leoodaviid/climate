@@ -9,6 +9,8 @@ const round = (num: number) =>
 const rem = (px: number) => `${round(px / 16)}rem`
 
 export const theme: DefaultTheme = {
+  borderRadius: '0.625rem',
+
   colors: {
     white: '#FFFFFF',
     black: '#0C0D0F',
@@ -20,7 +22,7 @@ export const theme: DefaultTheme = {
     cyan: '#3BC9DB',
     blue: '#25BEFF',
     indigo: '#4263Eb',
-    purple: '#7E5CEF',
+    purple: '#6d67d0',
     pink: '#FE5895',
     gray100: '#FAFAFA',
     gray200: '#E9ECEF',
@@ -50,6 +52,7 @@ export const theme: DefaultTheme = {
     '3xl': rem(32),
     '4xl': rem(40),
     '5xl': rem(64),
+    '6xl': rem(88),
   },
 }
 
