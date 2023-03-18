@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react'
 import { AirQuality } from '../../components/AirQuality/AirQuality'
 import { SunTime } from '../../components/SunTime/SunTime'
 import { Temperature } from '../../components/Temperature/Temperature'
+import { WeekWeather } from '../../components/WeekWeather/WeekWeather'
 import { ClimeData, QualityData, TimeData } from '../../models/climeData'
 import { getAir, getClimate, getTime } from '../../services/climate'
 import { Container } from './styles'
@@ -27,6 +28,7 @@ export default function Main() {
       {clime && <Temperature clime={clime} />}
       {quality && <AirQuality quality={quality} />}
       {time && <SunTime time={time} />}
+      <WeekWeather />
     </Container>
   )
 }

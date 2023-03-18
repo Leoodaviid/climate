@@ -93,4 +93,8 @@ export const Container = styled.section`
     align-items: baseline;
     gap: 0.25rem;
   }
+
+  @media (min-width: 1200px) {
+    grid-row: 1/3;
+  }
 `
