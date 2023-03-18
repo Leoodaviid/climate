@@ -7,6 +7,12 @@ export const Container = styled.section`
   display: flex;
   gap: 0.75rem;
 
+  h2 {
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+  }
+
   .day {
     flex: 1;
     display: grid;

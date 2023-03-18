@@ -78,5 +78,221 @@
       "sunrise": 1679128720,
       "sunset": 1679172352
     }
+  },
+
+  "week": {
+    "cod": "200",
+    "message": 0,
+    "cnt": 5,
+    "list": [
+      {
+        "dt": 1679184000,
+        "main": {
+          "temp": 27.17,
+          "feels_like": 29.62,
+          "temp_min": 25.36,
+          "temp_max": 27.17,
+          "pressure": 1012,
+          "sea_level": 1012,
+          "grnd_level": 1012,
+          "humidity": 75,
+          "temp_kf": 1.81
+        },
+        "weather": [
+          {
+            "id": 500,
+            "main": "Rain",
+            "description": "chuva leve",
+            "icon": "10n"
+          }
+        ],
+        "clouds": {
+          "all": 83
+        },
+        "wind": {
+          "speed": 3.03,
+          "deg": 325,
+          "gust": 4.23
+        },
+        "visibility": 6863,
+        "pop": 0.98,
+        "rain": {
+          "3h": 2.69
+        },
+        "sys": {
+          "pod": "n"
+        },
+        "dt_txt": "2023-03-19 00:00:00"
+      },
+      {
+        "dt": 1679194800,
+        "main": {
+          "temp": 25.34,
+          "feels_like": 26.1,
+          "temp_min": 23.98,
+          "temp_max": 25.34,
+          "pressure": 1013,
+          "sea_level": 1013,
+          "grnd_level": 1011,
+          "humidity": 83,
+          "temp_kf": 1.36
+        },
+        "weather": [
+          {
+            "id": 501,
+            "main": "Rain",
+            "description": "chuva moderada",
+            "icon": "10n"
+          }
+        ],
+        "clouds": {
+          "all": 92
+        },
+        "wind": {
+          "speed": 3.35,
+          "deg": 231,
+          "gust": 4.9
+        },
+        "visibility": 10000,
+        "pop": 1,
+        "rain": {
+          "3h": 4.2
+        },
+        "sys": {
+          "pod": "n"
+        },
+        "dt_txt": "2023-03-19 03:00:00"
+      },
+      {
+        "dt": 1679205600,
+        "main": {
+          "temp": 22.78,
+          "feels_like": 23.54,
+          "temp_min": 22.78,
+          "temp_max": 22.78,
+          "pressure": 1012,
+          "sea_level": 1012,
+          "grnd_level": 1010,
+          "humidity": 93,
+          "temp_kf": 0
+        },
+        "weather": [
+          {
+            "id": 500,
+            "main": "Rain",
+            "description": "chuva leve",
+            "icon": "10n"
+          }
+        ],
+        "clouds": {
+          "all": 100
+        },
+        "wind": {
+          "speed": 2.86,
+          "deg": 226,
+          "gust": 3.76
+        },
+        "visibility": 10000,
+        "pop": 1,
+        "rain": {
+          "3h": 2.55
+        },
+        "sys": {
+          "pod": "n"
+        },
+        "dt_txt": "2023-03-19 06:00:00"
+      },
+      {
+        "dt": 1679216400,
+        "main": {
+          "temp": 22.56,
+          "feels_like": 23.27,
+          "temp_min": 22.56,
+          "temp_max": 22.56,
+          "pressure": 1013,
+          "sea_level": 1013,
+          "grnd_level": 1012,
+          "humidity": 92,
+          "temp_kf": 0
+        },
+        "weather": [
+          {
+            "id": 500,
+            "main": "Rain",
+            "description": "chuva leve",
+            "icon": "10d"
+          }
+        ],
+        "clouds": {
+          "all": 100
+        },
+        "wind": {
+          "speed": 2.53,
+          "deg": 245,
+          "gust": 3.53
+        },
+        "visibility": 10000,
+        "pop": 0.84,
+        "rain": {
+          "3h": 1.34
+        },
+        "sys": {
+          "pod": "d"
+        },
+        "dt_txt": "2023-03-19 09:00:00"
+      },
+      {
+        "dt": 1679227200,
+        "main": {
+          "temp": 23.63,
+          "feels_like": 24.29,
+          "temp_min": 23.63,
+          "temp_max": 23.63,
+          "pressure": 1014,
+          "sea_level": 1014,
+          "grnd_level": 1013,
+          "humidity": 86,
+          "temp_kf": 0
+        },
+        "weather": [
+          {
+            "id": 500,
+            "main": "Rain",
+            "description": "chuva leve",
+            "icon": "10d"
+          }
+        ],
+        "clouds": {
+          "all": 100
+        },
+        "wind": {
+          "speed": 0.81,
+          "deg": 229,
+          "gust": 1.09
+        },
+        "visibility": 10000,
+        "pop": 0.8,
+        "rain": {
+          "3h": 0.16
+        },
+        "sys": {
+          "pod": "d"
+        },
+        "dt_txt": "2023-03-19 12:00:00"
+      }
+    ],
+    "city": {
+      "id": 6320062,
+      "name": "Fortaleza",
+      "coord": {
+        "lat": -3.7227,
+        "lon": -38.5247
+      },
+      "country": "BR",
+      "population": 2447409,
+      "timezone": -10800,
+      "sunrise": 1679128720,
+      "sunset": 1679172352
+    }
   }
 }

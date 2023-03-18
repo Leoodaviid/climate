@@ -50,3 +50,25 @@ export interface TimeData {
     sunset: number
   }
 }
+
+export interface WeekData {
+  list: {
+    dt: number
+    main: {
+      temp: number
+      temp_min: number
+      temp_max: number
+    }
+    weather: {
+      id: number
+      main: string
+      description: string
+      icon: string
+    }[]
+
+    sys: {
+      pod: string
+    }
+    dt_txt: string
+  }[]
+}
