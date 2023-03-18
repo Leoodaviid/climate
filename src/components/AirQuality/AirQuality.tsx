@@ -1,4 +1,4 @@
-import { Container } from './styles'
+import { Container, Title } from './styles'
 import Leaf from '../../assets/icons/leaf.svg'
 import { QualityData } from '../../models/climeData'
 
@@ -11,10 +11,10 @@ export const AirQuality = ({ quality }: AirQualityProps) => {
     <>
       {quality?.list.map((quality) => (
         <Container key={quality.main.aqi}>
-          <h2>
+          <Title>
             <img src={Leaf} alt='icone de folha' />
             Qualidade do ar
-          </h2>
+          </Title>
           {quality.main.aqi === 1 ? (
             <p className='qualitative'>Bom</p>
           ) : quality.main.aqi === 2 ? (

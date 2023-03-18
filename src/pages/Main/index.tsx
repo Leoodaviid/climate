@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react'
 import { AirQuality } from '../../components/AirQuality/AirQuality'
+import { SunTime } from '../../components/SunTime/SunTime'
 import { Temperature } from '../../components/Temperature/Temperature'
 import { ClimeData, QualityData } from '../../models/climeData'
 import { getAir, getClimate } from '../../services/climate'
@@ -22,6 +23,7 @@ export default function Main() {
     <Container>
       <Temperature clime={clime} />
       <AirQuality quality={quality} />
+      <SunTime />
     </Container>
   )
 }
