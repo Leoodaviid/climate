@@ -3,19 +3,26 @@ import Pin from '../../assets/icons/pin.png'
 import Wind from '../../assets/icons/wind.svg'
 import Humidity from '../../assets/icons/humidity.svg'
 import Rain from '../../assets/icons/rain.svg'
+import { ClimateData } from '../../models/climateData'
 
-export const Temperature = () => {
+interface TemperatureProps {
+  data?: ClimateData
+}
+
+export const Temperature = ({ data }: TemperatureProps) => {
   return (
     <Container>
       <div className='location'>
         <img src={Pin} alt='Icone de localização' />
-        <strong>Rio do Sul, SC</strong>
+        <strong>
+          {data?.name}, {data?.sys.country}
+        </strong>
       </div>
       <div className='temp'>
         <div className='number'>
-          18
+          {data?.main.temp.toFixed()}
           <div className='maxmin'>
-            22° <span>16°</span>
+            {data?.main.temp_max.toFixed()}° <span>{data?.main.temp_min.toFixed()}°</span>
           </div>
         </div>
         <div className='celcius'>°C</div>
@@ -25,9 +32,11 @@ export const Temperature = () => {
           <img src={Wind} alt='Icone de vento' />
           <div className='info'>
             <p>vento</p>
-            <h5>
-              17 <span>km/h</span>
-            </h5>
+            {data?.wind ? (
+              <h5>
+                {Math.round(data?.wind.speed.toFixed() * 1.60934)} <span>km/h</span>
+              </h5>
+            ) : null}
           </div>
         </div>
         <div className='stats'>
@@ -35,7 +44,7 @@ export const Temperature = () => {
           <div className='info'>
             <p>Umidade</p>
             <h5>
-              31 <span>%</span>
+              {data?.main.humidity} <span>%</span>
             </h5>
           </div>
         </div>
@@ -44,7 +53,7 @@ export const Temperature = () => {
           <div className='info'>
             <p>Chuva</p>
             <h5>
-              10 <span>%</span>
+              {data?.rain['1h']} <span>%</span>
             </h5>
           </div>
         </div>
