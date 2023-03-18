@@ -6,7 +6,7 @@ import Rain from '../../assets/icons/rain.svg'
 import { ClimeData } from '../../models/climeData'
 
 interface TemperatureProps {
-  clime?: ClimeData
+  clime: ClimeData
 }
 
 export const Temperature = ({ clime }: TemperatureProps) => {
@@ -15,14 +15,14 @@ export const Temperature = ({ clime }: TemperatureProps) => {
       <div className='location'>
         <img src={Pin} alt='Icone de localização' />
         <strong>
-          {clime?.name}, {clime?.sys.country}
+          {clime.name}, {clime.sys.country}
         </strong>
       </div>
       <div className='temp'>
         <div className='number'>
-          {clime?.main.temp.toFixed()}
+          {clime.main.temp.toFixed()}
           <div className='maxmin'>
-            {clime?.main.temp_max.toFixed()}° <span>{clime?.main.temp_min.toFixed()}°</span>
+            {clime.main.temp_max.toFixed()}° <span>{clime.main.temp_min.toFixed()}°</span>
           </div>
         </div>
         <div className='celcius'>°C</div>
@@ -32,9 +32,9 @@ export const Temperature = ({ clime }: TemperatureProps) => {
           <img src={Wind} alt='Icone de vento' />
           <div className='info'>
             <p>vento</p>
-            {clime?.wind ? (
+            {clime.wind ? (
               <h5>
-                {Math.round(clime?.wind.speed.toFixed() * 1.60934)} <span>km/h</span>
+                {Math.round(Number(clime.wind.speed.toFixed()) * 1.60934)} <span>km/h</span>
               </h5>
             ) : null}
           </div>
@@ -44,7 +44,7 @@ export const Temperature = ({ clime }: TemperatureProps) => {
           <div className='info'>
             <p>Umidade</p>
             <h5>
-              {clime?.main.humidity} <span>%</span>
+              {clime.main.humidity} <span>%</span>
             </h5>
           </div>
         </div>
@@ -53,7 +53,7 @@ export const Temperature = ({ clime }: TemperatureProps) => {
           <div className='info'>
             <p>Chuva</p>
             <h5>
-              {clime?.rain['1h']} <span>mm</span>
+              {clime.rain['1h']} <span>mm</span>
             </h5>
           </div>
         </div>

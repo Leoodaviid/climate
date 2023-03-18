@@ -1,9 +1,14 @@
 import { Title } from '../AirQuality/styles'
 import { Container } from './styles'
+import { formatUnix } from '../Helper/formatUnix'
+import { TimeData } from '../../models/climeData'
 import Sun from '../../assets/icons/sun.svg'
 import SunChart from '../../assets/icons/sun-chart.svg'
 
-export const SunTime = () => {
+interface SunTimeProps {
+  time: TimeData
+}
+export const SunTime = ({ time }: SunTimeProps) => {
   return (
     <Container>
       <Title>
@@ -15,12 +20,12 @@ export const SunTime = () => {
           <div className='chart'>
             <img src={SunChart} alt='imagem de um gr´sfico semi circulo com traços' />
           </div>
-          <time className='now'>17:30</time>
+          <time className='now'>{formatUnix(time.dt)}</time>
         </div>
       </div>
       <div className='time'>
-        <time className='sunrise'>06:00</time>
-        <time className='sunrise'>18:00</time>
+        <time className='sunrise'>{formatUnix(time.sys.sunrise)}</time>
+        <time className='sunrise'>{formatUnix(time.sys.sunset)}</time>
       </div>
     </Container>
   )

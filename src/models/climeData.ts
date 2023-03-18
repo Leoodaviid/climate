@@ -13,7 +13,7 @@ export interface ClimeData {
     humidity: number
   }
   wind: {
-    speed?: number | any
+    speed: number
   }
   rain: {
     '1h': number
@@ -40,4 +40,13 @@ export interface QualityData {
     }
     dt: number
   }[]
+}
+
+export interface TimeData {
+  dt: number
+  sys: {
+    id: number
+    sunrise: number
+    sunset: number
+  }
 }

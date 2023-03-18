@@ -3,13 +3,13 @@ import Leaf from '../../assets/icons/leaf.svg'
 import { QualityData } from '../../models/climeData'
 
 interface AirQualityProps {
-  quality?: QualityData
+  quality: QualityData
 }
 
 export const AirQuality = ({ quality }: AirQualityProps) => {
   return (
     <>
-      {quality?.list.map((quality) => (
+      {quality.list.map((quality) => (
         <Container key={quality.main.aqi}>
           <Title>
             <img src={Leaf} alt='icone de folha' />
