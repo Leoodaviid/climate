@@ -41,10 +41,10 @@ export const Container = styled.section`
   }
 
   .temp .number {
-    text-align: center;
     font: 700 ${({ theme }) => theme.fontSize['6xl']} / 1 ${({ theme }) => theme.fontFamily.heading};
     color: ${({ theme }) => theme.colors.white};
     display: flex;
+    text-align: center;
     flex-direction: column;
     gap: 4px;
   }

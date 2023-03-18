@@ -6,4 +6,5 @@ export const Container = styled.main`
   min-height: 100vh;
   display: grid;
   place-content: center;
+  gap: 1.5rem;
 `
