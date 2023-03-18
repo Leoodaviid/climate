@@ -1,4 +1,4 @@
-export interface ClimateData {
+export interface ClimeData {
   name: string
   weather: {
     main: string

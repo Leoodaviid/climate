@@ -3,26 +3,26 @@ import Pin from '../../assets/icons/pin.png'
 import Wind from '../../assets/icons/wind.svg'
 import Humidity from '../../assets/icons/humidity.svg'
 import Rain from '../../assets/icons/rain.svg'
-import { ClimateData } from '../../models/climateData'
+import { ClimeData } from '../../models/climeData'
 
 interface TemperatureProps {
-  data?: ClimateData
+  clime?: ClimeData
 }
 
-export const Temperature = ({ data }: TemperatureProps) => {
+export const Temperature = ({ clime }: TemperatureProps) => {
   return (
     <Container>
       <div className='location'>
         <img src={Pin} alt='Icone de localização' />
         <strong>
-          {data?.name}, {data?.sys.country}
+          {clime?.name}, {clime?.sys.country}
         </strong>
       </div>
       <div className='temp'>
         <div className='number'>
-          {data?.main.temp.toFixed()}
+          {clime?.main.temp.toFixed()}
           <div className='maxmin'>
-            {data?.main.temp_max.toFixed()}° <span>{data?.main.temp_min.toFixed()}°</span>
+            {clime?.main.temp_max.toFixed()}° <span>{clime?.main.temp_min.toFixed()}°</span>
           </div>
         </div>
         <div className='celcius'>°C</div>
@@ -32,9 +32,9 @@ export const Temperature = ({ data }: TemperatureProps) => {
           <img src={Wind} alt='Icone de vento' />
           <div className='info'>
             <p>vento</p>
-            {data?.wind ? (
+            {clime?.wind ? (
               <h5>
-                {Math.round(data?.wind.speed.toFixed() * 1.60934)} <span>km/h</span>
+                {Math.round(clime?.wind.speed.toFixed() * 1.60934)} <span>km/h</span>
               </h5>
             ) : null}
           </div>
@@ -44,7 +44,7 @@ export const Temperature = ({ data }: TemperatureProps) => {
           <div className='info'>
             <p>Umidade</p>
             <h5>
-              {data?.main.humidity} <span>%</span>
+              {clime?.main.humidity} <span>%</span>
             </h5>
           </div>
         </div>
@@ -53,7 +53,7 @@ export const Temperature = ({ data }: TemperatureProps) => {
           <div className='info'>
             <p>Chuva</p>
             <h5>
-              {data?.rain['1h']} <span>%</span>
+              {clime?.rain['1h']} <span>mm</span>
             </h5>
           </div>
         </div>
