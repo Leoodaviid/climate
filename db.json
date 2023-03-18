@@ -1,0 +1,48 @@
+{
+  "data": {
+    "coord": {
+      "lon": -38.5247,
+      "lat": -3.7227
+    },
+    "weather": [
+      {
+        "id": 500,
+        "main": "Rain",
+        "description": "chuva leve",
+        "icon": "10n"
+      }
+    ],
+    "base": "stations",
+    "main": {
+      "temp": 26.07,
+      "feels_like": 26.07,
+      "temp_min": 24.01,
+      "temp_max": 26.07,
+      "pressure": 1013,
+      "humidity": 89
+    },
+    "visibility": 10000,
+    "wind": {
+      "speed": 1.54,
+      "deg": 240
+    },
+    "rain": {
+      "1h": 0.75
+    },
+    "clouds": {
+      "all": 75
+    },
+    "dt": 1679099421,
+    "sys": {
+      "type": 1,
+      "id": 8363,
+      "country": "BR",
+      "sunrise": 1679042332,
+      "sunset": 1679085976
+    },
+    "timezone": -10800,
+    "id": 6320062,
+    "name": "São Paulo",
+    "cod": 200
+  }
+}
