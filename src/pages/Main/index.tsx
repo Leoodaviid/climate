@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+import { useState, useEffect, ChangeEvent } from 'react'
 import { AirQuality } from '../../components/AirQuality/AirQuality'
 import { SunTime } from '../../components/SunTime/SunTime'
 import { Temperature } from '../../components/Temperature/Temperature'
@@ -8,30 +8,62 @@ import { getAir, getClimate, getTime, getWeek } from '../../services/climate'
 import { Container } from './styles'
 
 export default function Main() {
+  const [location, setLocation] = useState('')
   const [clime, setClime] = useState<ClimeData>()
-  const [quality, setquality] = useState<QualityData>()
+  const [quality, setQuality] = useState<QualityData>()
   const [time, setTime] = useState<TimeData>()
   const [week, setWeek] = useState<WeekData>()
+  const [isLoading, setIsLoading] = useState(false)
+
+  const handleLocationChange = (event: ChangeEvent<HTMLInputElement>) => {
+    setLocation(event.target.value)
+  }
+
+  const handleSearchClick = () => {
+    setIsLoading(true)
+  }
 
   useEffect(() => {
-    ;(async () => {
-      const climeRequest = await getClimate()
-      const qualityRequest = await getAir()
-      const timeResponse = await getTime()
-      const weekResponse = await getWeek()
-      setClime(climeRequest.data)
-      setquality(qualityRequest.data)
-      setTime(timeResponse.data)
-      setWeek(weekResponse.data)
-    })()
-  }, [])
+    const fetchData = async () => {
+      try {
+        const climeRequest = await getClimate({ location })
+        const { lat: latitude, lon: longitude } = climeRequest.data.coord
+        if (latitude && longitude) {
+          setClime(climeRequest.data)
+          const qualityRequest = await getAir({ lat: latitude, lon: longitude })
+          setQuality(qualityRequest.data)
+          const timeRequest = await getTime({ location })
+          setTime(timeRequest.data)
+          const weekRequest = await getWeek({ location })
+          setWeek(weekRequest.data)
+        }
+      } catch (error) {
+        console.log('Error:', error)
+      } finally {
+        setIsLoading(false)
+      }
+    }
+
+    if (isLoading) {
+      fetchData()
+    }
+  }, [isLoading, location])
 
   return (
-    <Container>
-      {clime && <Temperature clime={clime} />}
-      {quality && <AirQuality quality={quality} />}
-      {time && <SunTime time={time} />}
-      {week && <WeekWeather week={week} />}
-    </Container>
+    <>
+      <Container>
+        <form>
+          <label htmlFor='location'>Location</label>
+          <input type='text' id='location' value={location} onChange={handleLocationChange} />
+          <button type='button' onClick={handleSearchClick} disabled={isLoading}>
+            {isLoading ? 'Loading...' : 'Search'}
+          </button>
+        </form>
+        {clime && <Temperature clime={clime} />}
+        {quality && <AirQuality quality={quality} />}
+        {time && <SunTime time={time} />}
+        {week && <WeekWeather week={week} />}
+      </Container>
+    </>
   )
 }

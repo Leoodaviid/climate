@@ -48,11 +48,11 @@ export const AirQuality = ({ quality }: AirQualityProps) => {
               <small>NO₂</small>
             </div>
             <div className='number'>
-              <p>2{quality.components.o3}</p>
+              <p>2{quality.components.o3.toFixed()}</p>
               <small>O₃</small>
             </div>
             <div className='number'>
-              <p>{quality.components.co}</p>
+              <p>{quality.components.co.toFixed()}</p>
               <small>CO</small>
             </div>
           </div>

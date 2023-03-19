@@ -1,4 +1,8 @@
 export interface ClimeData {
+  coord: {
+    lon?: number
+    lat?: number
+  }
   name: string
   weather: {
     main: string

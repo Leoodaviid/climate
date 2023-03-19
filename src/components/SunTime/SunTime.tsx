@@ -18,7 +18,7 @@ export const SunTime = ({ time }: SunTimeProps) => {
       <div className='sun-chart-wrapper'>
         <div className='sun-chart'>
           <div className='chart'>
-            <img src={SunChart} alt='imagem de um gr´sfico semi circulo com traços' />
+            <img src={SunChart} alt='imagem de um gráfico semi circulo com traços' />
           </div>
           <time className='now'>{formatUnix(time.dt)}</time>
         </div>

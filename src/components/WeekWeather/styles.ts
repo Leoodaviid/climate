@@ -29,7 +29,7 @@ export const Container = styled.section`
     color: #c2bff4;
   }
 
-  @media (min-width: 1200px) {
+  @media (min-width: 1190px) {
     grid-column: 2/4;
   }
 `

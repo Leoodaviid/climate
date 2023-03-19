@@ -52,9 +52,11 @@ export const Temperature = ({ clime }: TemperatureProps) => {
           <img src={Rain} alt='Icone de chuva' />
           <div className='info'>
             <p>Chuva</p>
-            <h5>
-              {clime.rain['1h']} <span>mm</span>
-            </h5>
+            {clime.rain && (
+              <h5>
+                {clime.rain['1h']} <span>mm</span>
+              </h5>
+            )}
           </div>
         </div>
       </div>

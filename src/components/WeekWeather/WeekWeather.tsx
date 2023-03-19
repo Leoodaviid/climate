@@ -13,7 +13,9 @@ const icones = {
   '501': Thunder,
   '800': Sun,
   '801': Cloudy,
+  '802': Cloud,
   '803': Cloud,
+  '804': Cloud,
 } as Record<string, string>
 
 interface WeekWeatherProps {

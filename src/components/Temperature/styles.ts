@@ -3,12 +3,10 @@ import Bg from '../../assets/images/temp-bg.png'
 import Clouds from '../../assets/icons/clouds.svg'
 
 export const Container = styled.section`
-  background: url(${Bg});
+  background: url(${Bg}) no-repeat center/cover;
   background-color: ${({ theme }) => theme.colors.purple};
   backdrop-filter: blur(1rem);
   border-radius: ${({ theme }) => theme.borderRadius};
-  width: 30rem;
-  height: 30rem;
   position: relative;
   display: grid;
   grid-template-rows: max-content 1fr max-content;
@@ -93,8 +91,7 @@ export const Container = styled.section`
     align-items: baseline;
     gap: 0.25rem;
   }
-
-  @media (min-width: 1200px) {
-    grid-row: 1/3;
+  @media (min-width: 1190px) {
+    grid-row: 2/4;
   }
 `
