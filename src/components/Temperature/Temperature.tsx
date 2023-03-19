@@ -48,17 +48,17 @@ export const Temperature = ({ clime }: TemperatureProps) => {
             </h5>
           </div>
         </div>
-        <div className='stats'>
-          <img src={Rain} alt='Icone de chuva' />
-          <div className='info'>
-            <p>Chuva</p>
-            {clime.rain && (
+        {clime.rain && (
+          <div className='stats'>
+            <img src={Rain} alt='Icone de chuva' />
+            <div className='info'>
+              <p>Chuva</p>
               <h5>
                 {clime.rain['1h']} <span>mm</span>
               </h5>
-            )}
+            </div>
           </div>
-        </div>
+        )}
       </div>
     </Container>
   )
