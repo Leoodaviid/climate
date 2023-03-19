@@ -7,11 +7,7 @@ export const Container = styled.section`
   text-align: center;
   display: grid;
   font-weight: 700;
-  .qualitative {
-    margin-top: 2rem;
-    font-size: ${({ theme }) => theme.fontSize.lg};
-    color: ${({ theme }) => theme.colors.teal};
-  }
+
   > .number {
     margin-top: 0.25rem;
     font-size: ${({ theme }) => theme.fontSize['4xl']};
@@ -21,18 +17,15 @@ export const Container = styled.section`
   .info {
     display: flex;
     align-items: center;
-    margin-top: 2rem;
-    padding: 1rem 1rem;
+    gap: 0.4rem;
+    margin-top: 1rem;
+    padding: 0.5rem 0.2rem;
   }
 
   .info .number {
     flex: 1;
   }
 
-  .info p {
-    font-size: ${({ theme }) => theme.fontSize.md};
-    color: ${({ theme }) => theme.colors.teal};
-  }
   .info small {
     font-size: ${({ theme }) => theme.fontSize.sm};
     font-weight: 400;
@@ -47,4 +40,21 @@ export const Title = styled.h2`
   justify-content: center;
   gap: 0.5rem;
   margin-top: 2rem;
+`
+
+interface QualitativeProps {
+  color: string
+}
+export const Qualitative = styled.p<QualitativeProps>`
+  margin-top: 2rem;
+  font-size: ${({ theme }) => theme.fontSize.lg};
+  color: ${(props) => props.color};
+`
+
+interface ComponentProps {
+  color: string
+}
+export const P = styled.p<ComponentProps>`
+  font-size: ${({ theme }) => theme.fontSize.md};
+  color: ${(props) => props.color};
 `
