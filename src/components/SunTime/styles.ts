@@ -1,4 +1,4 @@
-import styled from 'styled-components'
+import styled, { css } from 'styled-components'
 
 export const Container = styled.section`
   width: 100%;
@@ -13,15 +13,36 @@ export const Container = styled.section`
     margin-top: 0.25rem;
     height: 6.8rem;
   }
-  .sun-chart {
-    --pos-x: 80;
-    margin: auto;
-    width: 13.25rem;
-    height: 13.25rem;
-    position: relative;
-  }
 
-  .sun-chart::before {
+  .time {
+    font-size: ${({ theme }) => theme.fontSize.sm};
+    color: ${({ theme }) => theme.colors.white};
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0.5rem auto 1rem;
+    max-width: 15.3rem;
+  }
+`
+interface DivSunProps {
+  position: number
+}
+export const DivSun = styled.div<DivSunProps>`
+  ${({ position }) =>
+    position
+      ? css`
+          --pos-x: ${position};
+        `
+      : css`
+          --pos-x: 0;
+        `}
+  margin: auto;
+  width: 13.25rem;
+  height: 13.25rem;
+  position: relative;
+  transition: 0.3s;
+
+  ::before {
     content: '';
     width: 0.75rem;
     height: 0.75rem;
@@ -46,7 +67,7 @@ export const Container = styled.section`
     height: 13.25rem;
     display: block;
     border-radius: 50%;
-    background: linear-gradient(180deg, rgba(251, 219, 96, 0.2) 0%, rgba(251, 219, 96, 0) 101.89%);
+    background: linear-gradient(180deg, rgba(251, 219, 96, 0) 0%, rgba(251, 219, 96, 0.2) 101.89%);
     --mask: linear-gradient(0deg, white 50%, transparent 0%);
     mask: var(--mask);
     -webkit-mask: var(--mask);
@@ -56,7 +77,7 @@ export const Container = styled.section`
   .chart img {
     position: absolute;
     top: 0;
-    left: -0.1%;
+    left: -1%;
   }
 
   time.now {
@@ -66,15 +87,5 @@ export const Container = styled.section`
     transform: translate(-50%);
     font-size: ${({ theme }) => theme.fontSize.md};
     color: ${({ theme }) => theme.colors.white};
-  }
-
-  .time {
-    font-size: ${({ theme }) => theme.fontSize.sm};
-    color: ${({ theme }) => theme.colors.white};
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    margin: 0.5rem auto 1rem;
-    max-width: 15.3rem;
   }
 `

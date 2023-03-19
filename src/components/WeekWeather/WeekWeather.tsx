@@ -1,7 +1,7 @@
 import { Title } from '../AirQuality/styles'
 import { Container } from './styles'
 import { WeekData } from '../../models/climeData'
-import { formatHour, getDayOfWeek } from '../Helper/dayOfWeek'
+import { formatHour, getDayOfWeek } from '../Helper/formatting'
 import Cloud from '../../assets/icons/weather-cloud.svg'
 import Sun from '../../assets/icons/weather-sun.svg'
 import Rain from '../../assets/icons/weather-rain.svg'
