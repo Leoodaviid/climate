@@ -1,6 +1,7 @@
 import styled from 'styled-components'
 
 export const Container = styled.section`
+  width: 100%;
   background-color: ${({ theme }) => theme.colors.purple};
   border-radius: ${({ theme }) => theme.borderRadius};
   text-align: center;

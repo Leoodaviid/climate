@@ -1,6 +1,7 @@
 import styled from 'styled-components'
 
 export const Container = styled.section`
+  width: 100%;
   background-color: ${({ theme }) => theme.colors.purple};
   border-radius: ${({ theme }) => theme.borderRadius};
   padding: 2.5rem;
@@ -31,5 +32,9 @@ export const Container = styled.section`
 
   @media (min-width: 1190px) {
     grid-column: 2/4;
+  }
+
+  @media (max-width: 800px) {
+    flex-wrap: wrap;
   }
 `

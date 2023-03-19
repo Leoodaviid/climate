@@ -4,8 +4,7 @@ import Bg from '../../assets/images/bg.jpg'
 export const Container = styled.main`
   background: url(${Bg}) no-repeat center/cover;
   min-height: 100vh;
-  min-width: 100%;
-  padding: 1rem 5rem;
+  padding: 1rem;
   display: grid;
   grid-template-columns: 1fr;
   place-content: center;
@@ -37,6 +36,10 @@ export const Container = styled.main`
       color: #e7e6fb;
       padding-left: 0.25rem;
 
+      &::placeholder {
+        color: #e7e6fb;
+      }
+
       :focus {
         outline: none;
         border-color: ${({ theme }) => theme.colors.purple};
@@ -61,6 +64,7 @@ export const Container = styled.main`
   @media (min-width: 1190px) {
     grid-template-columns: 30rem 17.31rem 17.31rem;
     grid-template-rows: auto 15.25rem 13.25rem;
+    padding: 1rem 5rem;
 
     form {
       grid-column: 1/-1;

@@ -1,8 +1,10 @@
 import styled from 'styled-components'
 import Bg from '../../assets/images/temp-bg.png'
 import Clouds from '../../assets/icons/clouds.svg'
+import Cloud from '../../assets/icons/weather-cloud.svg'
 
 export const Container = styled.section`
+  width: 100%;
   background: url(${Bg}) no-repeat center/cover;
   background-color: ${({ theme }) => theme.colors.purple};
   backdrop-filter: blur(1rem);
@@ -72,6 +74,7 @@ export const Container = styled.section`
     background: rgba(102, 96, 200, 0.6);
     border-radius: 0.375rem;
     display: flex;
+    justify-content: center;
     align-items: center;
     gap: 0.75rem;
   }
@@ -93,5 +96,17 @@ export const Container = styled.section`
   }
   @media (min-width: 1190px) {
     grid-row: 2/4;
+  }
+  @media (max-width: 1190px) {
+    ::before {
+      background: url(${Cloud}) no-repeat center/cover;
+      width: 8rem;
+      height: 8rem;
+      top: -3rem;
+      left: -1.4rem;
+    }
+    .statistics {
+      flex-wrap: wrap;
+    }
   }
 `

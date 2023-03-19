@@ -54,7 +54,13 @@ export default function Main() {
       <Container>
         <form>
           <label htmlFor='location'>Location</label>
-          <input type='text' id='location' value={location} onChange={handleLocationChange} />
+          <input
+            type='text'
+            id='location'
+            placeholder='Informe a Cidade ou País'
+            value={location}
+            onChange={handleLocationChange}
+          />
           <button type='button' onClick={handleSearchClick} disabled={isLoading}>
             {isLoading ? 'Loading...' : 'Search'}
           </button>
