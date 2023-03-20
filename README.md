@@ -1,10 +1,10 @@
-<p>Este projeto é um aplicativo web que permite aos usuários procurar um usuário do GitHub por seu nome de usuário e recuperar informações sobre esse usuário e uma lista de seus repositórios fazendo uso da API do GitHub para recuperar os dados necessários.</p>
+<p>Este projeto é um aplicativo de clima e integra diferentes serviços de API para fornecer informações sobre o clima e a qualidade do ar em uma determinada localização geográfica.Ele permite que o usuário digite o nome de uma cidade ou país e, em seguida, realiza uma série de requisições HTTP para buscar informações climáticas atualizadas, incluindo temperatura, umidade, pressão, vento, nascer e pôr do sol, e informações sobre a qualidade do ar, como concentrações de poluentes.O aplicativo também busca informações de previsão do tempo para as próximas 15 horas e exibe um resumo do clima para cada hora, juntamente com um gráfico que mostra a variação da temperatura ao longo do dia. O layout do aplicativo é intuitivo e fácil de usar, e as informações são apresentadas de maneira clara e organizada.</p>
 
-Link : <a href="https://api-github-beta.vercel.app">https://api-github-beta.vercel.app</a>
+🔗: <a href="https://climate-zeta.vercel.app">https://climate-zeta.vercel.app/</a>
 
 
 
-## Tecnologias:
+## 💻Tecnologias:
 
 - Typescript
 
@@ -20,7 +20,7 @@ Link : <a href="https://api-github-beta.vercel.app">https://api-github-beta.verc
 
   
 
-## Instalação:
+## 🛠️Instalação:
 
 Para instalar as dependências, execute o seguinte comando:
 
@@ -30,7 +30,7 @@ npm install ou yarn install
 
 
 
-## Uso:
+## 🧑‍💻Uso:
 
 Para iniciar o projeto, execute o seguinte comando:
 
@@ -44,7 +44,7 @@ Isso iniciará o projeto em`http://localhost:3000`.
 
 
 
-## Estrutura dos arquivos:
+## 🗃️Estrutura dos arquivos:
 
 
 
@@ -122,7 +122,7 @@ Isso iniciará o projeto em`http://localhost:3000`.
 
 
 
-## Descrição de alguns diretórios importantes:
+## 🔑Descrição de alguns diretórios importantes:
 
 
 
@@ -136,11 +136,11 @@ Isso iniciará o projeto em`http://localhost:3000`.
 
 
 
-## Detalhes e funções de alguns arquivos:
+## 🧰Detalhes e funções de alguns arquivos:
 
 
 
-- `src/componentes/AirQuality/AirQuality.tsx`: O componente renderiza uma section que exibe a qualidade do ar. O componente AirQuality recebe um objeto "quality" do tipo QualityData por meio da sua propriedade "props". O componente renderiza uma lista de itens da qualidade do ar através do método map() da lista de objetos "list" que é parte do objeto "quality". Para cada item na lista, o componente chama o componente AirQualityItem com a propriedade "item" e uma chave única "key" definida como o valor da propriedade "dt" do item. O componente AirQualityItem é responsável por renderizar cada item individualmente.Em resumo, esse código é responsável por renderizar uma lista de itens de qualidade do ar usando o componente AirQualityItem para cada item da lista.
+- `src/componentes/AirQuality/AirQuality.tsx`: O componente renderiza uma section que exibe a qualidade do ar, recebe um objeto por meio da propriedade "props". O componente renderiza uma lista de itens da qualidade do ar através do método map() da lista de objetos "list". Para cada item na lista, o componente chama o componente `AirQualityItem` com a propriedade "item" e uma chave única "key" definida como o valor da propriedade "dt" do item. O componente `AirQualityItem` é responsável por renderizar cada item individualmente. Em resumo, esse código é responsável por renderizar uma lista de itens de qualidade do ar usando o componente `AirQualityItem` para cada item da lista.
 
 - `src/components/AirQuality/AirQualityItem.tsx`: O componente renderiza a lista de itens da qualidade do ar. O componente usa o destructuring para extrair as propriedades "main" e "components" do objeto "item". Em seguida, ele define uma função chamada "renderComponent" que é usada para renderizar cada uma das informações do item de qualidade do ar. A função recebe três parâmetros: "main" (para acessar a propriedade "main" do objeto "item"), "label" (para exibir a legenda da informação) e "value" (para exibir o valor da informação). Em resumo, esse código é responsável por renderizar um item da qualidade do ar e exibir as informações relevantes. Ele extrai as informações do objeto "item" e usa a função "renderComponent" para renderizar cada uma das informações, exibindo o valor e a legenda da informação com a cor correspondente da qualidade do ar.
 
@@ -160,13 +160,9 @@ Isso iniciará o projeto em`http://localhost:3000`.
 
 - `src/components/WeekWeater/WeekWeather.tsx`: O componente  renderiza uma lista de previsões a cada 3 horas da semana com suas informações meteorológicas correspondentes. O `icones`objeto mapeia códigos meteorológicos para seus ícones correspondentes. O componente mapeia sobre a `week.list`matriz e para cada elemento renderiza um `div`elemento com um único `key`igual à `dt`propriedade. Em seguida, exibe o dia da semana, a hora, o ícone do clima e a temperatura máxima e mínima. No geral, esse componente é usado para exibir a previsão do tempo a cada três horas.
 
-- `src/pages/Main/index.tsx`: Esta é uma função utilitária que recebe uma matriz de repositórios e retorna uma matriz de idiomas usados nesses repositórios, junto com sua contagem e cor. A função começa inicializando um objeto vazio chamado languageCounts. Em seguida, itera sobre cada repositório na matriz e recupera a propriedade de idioma do repositório. Se o idioma for nulo, a iteração será ignorada.
-Se o idioma já existir no objeto languageCounts, a contagem será incrementada em um. Caso contrário, uma nova chave com o nome do idioma é criada e a contagem é definida como um.
-Após todos os repositórios terem sido processados, a função cria uma matriz de dados de idioma mapeando as chaves do objeto languageCounts. Para cada idioma, ele cria um objeto contendo o nome do idioma, a contagem de quantas vezes ele aparece nos repositórios e sua cor (que é recuperada do objeto languageColors).
-A matriz de dados de idioma é classificada em ordem decrescente por contagem, para que os idiomas mais usados apareçam no topo. Por fim, a função retorna a matriz de dados do idioma.
+- `src/pages/Main/index.tsx`: Este componente que renderiza a page aplicativo de clima. Consiste em um formulário onde o usuário pode inserir um local e, ao clicar no botão de pesquisa, envia solicitações a várias APIs para buscar dados sobre o clima daquele local. Os dados buscados são exibidos na página usando outros componentes do React. O componente mantém várias variáveis de estado usando o hook useState, incluindo location, que é a entrada do usuário, e isLoading, que é usado para indicar se o aplicativo está buscando dados no momento. O componente também possui um gancho useEffect que é chamado sempre que as variáveis de estado isLoading ou de localização são alteradas. Se isLoading for verdadeiro, ele enviará solicitações para várias APIs usando funções como getClimate, getAir e getTime. Os resultados dessas solicitações são usados para atualizar as variáveis de estado, como clima, qualidade, tempo e semana.
 
-- `src/services/mainApi/user.ts`: Essas funções fazem solicitações à API do GitHub usando a biblioteca axios fornecida pela instância baseApi. getUser faz uma solicitação GET para o terminal /users/:username da API do GitHub para recuperar as informações do usuário do nome de usuário fornecido. Ele recebe um objeto LoginUserProps contendo a propriedade userLogin, que é o nome de usuário que está sendo procurado. A resposta conterá um objeto UserProps com informações como nome, biografia, localização e URL do avatar.
-getRepos faz uma solicitação GET para o endpoint /users/:username/repos da API do GitHub para recuperar os repositórios do nome de usuário fornecido. Ele recebe um objeto LoginUserProps contendo a propriedade userLogin, que é o nome de usuário que está sendo procurado. A resposta conterá uma matriz de objetos RepositoryProps com informações como nome, descrição, idioma e número de estrelas.
+- `src/services/mainApi/climate.ts`: Essas funções fazem solicitações GET à API OpenWeather para recuperar os dados climáticos desse local. Cada função recebe parâmetros diferentes, dependendo do ponto de extremidade da API que está sendo usado.
 
 - `src/App.tsx`: Este é um componente funcional React que retorna o componente App principal. O componente envolve todo o aplicativo com o BrowserRouter da biblioteca react-router-dom, que fornece roteamento do lado do cliente. Ele também envolve o aplicativo com um componente Theme personalizado, que fornece ThemeProvider de componentes estilizados, permitindo a definição de variáveis CSS globais a serem aplicadas a todos os componentes de componentes estilizados. O componente também renderiza o componente AppRoutes, que define as rotas do aplicativo e aplica os componentes GlobalStyle e Normalize de styled-components e styled-normalize library, respectivamente, para normalizar estilos CSS em diferentes navegadores. Por fim, o componente envolve todo o aplicativo com um componente RepositoriesStorage personalizado, que fornece gerenciamento de estado ao aplicativo usando a API React Context.
 
