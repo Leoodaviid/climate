@@ -17,7 +17,7 @@ export const Container = styled.section`
   .info {
     display: flex;
     align-items: center;
-    gap: 0.4rem;
+    gap: 0.2rem;
     margin-top: 1rem;
     padding: 0.5rem 0.2rem;
   }
