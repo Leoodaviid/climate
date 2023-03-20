@@ -16,13 +16,14 @@ export const Container = styled.main`
     gap: 0.25rem;
     width: 100%;
     padding: 2.5rem 2rem;
+    position: relative;
 
     label {
       position: absolute;
-      top: 15px;
+      top: 0px;
       margin-top: 1rem;
       font-size: ${({ theme }) => theme.fontSize.base};
-      color: ${({ theme }) => theme.colors.purple};
+      color: #e7e6fb;
     }
 
     input {
@@ -68,10 +69,6 @@ export const Container = styled.main`
 
     form {
       grid-column: 1/-1;
-
-      label {
-        top: 150px;
-      }
     }
   }
 `
